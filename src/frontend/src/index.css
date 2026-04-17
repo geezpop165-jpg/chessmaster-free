@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Bricolage Grotesque";
+    --font-body: "DM Sans";
+    --font-mono: "Geist Mono";
+    --radius: 0.375rem;
+
+    --background: 0.12 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.16 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.2 0 0;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.7 0.18 146;
+    --primary-foreground: 0.12 0 0;
+
+    --secondary: 0.55 0.15 140;
+    --secondary-foreground: 0.95 0 0;
+    --muted: 0.25 0 0;
+    --muted-foreground: 0.65 0 0;
+
+    --accent: 0.6 0.2 120;
+    --accent-foreground: 0.12 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.12 0 0;
+
+    --border: 0.22 0 0;
+    --input: 0.22 0 0;
+    --ring: 0.7 0.18 146;
+
+    --chart-1: 0.68 0.22 141;
+    --chart-2: 0.55 0.18 120;
+    --chart-3: 0.62 0.17 72;
+    --chart-4: 0.58 0.19 32;
+    --chart-5: 0.7 0.21 40;
+
+    --sidebar: 0.16 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.7 0.18 146;
+    --sidebar-primary-foreground: 0.12 0 0;
+    --sidebar-accent: 0.25 0 0;
+    --sidebar-accent-foreground: 0.85 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.7 0.18 146;
+
+    /* Chess board colors */
+    --chess-light: #f0d9b5;
+    --chess-dark: #b58863;
+    --chess-eval-white: #f0d9b5;
+    --chess-eval-black: #1e1e1e;
+    --chess-eval-black-bar: #2a2a2a;
+  }
+
+  .dark {
+    --background: 0.12 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.16 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.2 0 0;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.7 0.18 146;
+    --primary-foreground: 0.12 0 0;
+
+    --secondary: 0.55 0.15 140;
+    --secondary-foreground: 0.95 0 0;
+    --muted: 0.25 0 0;
+    --muted-foreground: 0.65 0 0;
+
+    --accent: 0.6 0.2 120;
+    --accent-foreground: 0.12 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.12 0 0;
+
+    --border: 0.22 0 0;
+    --input: 0.22 0 0;
+    --ring: 0.7 0.18 146;
+
+    --chart-1: 0.68 0.22 141;
+    --chart-2: 0.55 0.18 120;
+    --chart-3: 0.62 0.17 72;
+    --chart-4: 0.58 0.19 32;
+    --chart-5: 0.7 0.21 40;
+
+    --sidebar: 0.16 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.7 0.18 146;
+    --sidebar-primary-foreground: 0.12 0 0;
+    --sidebar-accent: 0.25 0 0;
+    --sidebar-accent-foreground: 0.85 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.7 0.18 146;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .move-arrow-best {
+    @apply stroke-emerald-500;
+  }
+
+  .move-arrow-alt {
+    @apply stroke-sky-400;
+  }
+
+  .move-arrow-third {
+    @apply stroke-amber-400;
+  }
+
+  .legal-move-highlight {
+    @apply ring-2 ring-emerald-500/50 ring-inset;
+  }
+
+  .board-shadow {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), inset 0 1px 2px
+      rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-panel {
+    background-color: oklch(var(--card) / 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid oklch(var(--border) / 0.3);
+  }
+}

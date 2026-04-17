@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "ChessMaster Free",
+  "version": "1.0.0",
+  "description": "Real-time chess analysis overlay for chess.com — top moves + evaluation bar powered by Stockfish",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://www.chess.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.chess.com/play/*",
+        "https://www.chess.com/game/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ChessMaster Free",
+    "default_icon": {
+      "16": "assets/generated/icon16.dim_16x16.png",
+      "48": "assets/generated/icon48.dim_48x48.png",
+      "128": "assets/generated/icon128.dim_128x128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/generated/icon16.dim_16x16.png",
+    "48": "assets/generated/icon48.dim_48x48.png",
+    "128": "assets/generated/icon128.dim_128x128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["stockfish-nnue-16-single.js", "*.wasm"],
+      "matches": ["https://www.chess.com/*"]
+    }
+  ]
+}

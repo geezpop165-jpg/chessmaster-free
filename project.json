@@ -1,0 +1,22 @@
+{
+  "overview": "ChessMaster Free is a chess analysis browser extension for Chrome that injects a real-time analysis overlay on chess.com. It shows the top 3 best moves and an evaluation bar powered by Stockfish NNUE, auto-updating as you play.",
+  "features": [
+    "Real-time analysis overlay on chess.com",
+    "Top 3 move suggestions with scores",
+    "Evaluation bar showing advantage",
+    "Auto-updates on every move",
+    "Stockfish NNUE engine (no external API)",
+    "Manifest V3 for Chrome Web Store",
+    "Works in live games, bot games, and more"
+  ],
+  "category": "browser-extension",
+  "tags": [
+    "chess",
+    "browser-extension",
+    "stockfish",
+    "analysis",
+    "chess-com",
+    "chrome"
+  ],
+  "last_updated": "2026-04-17T11:26:10.709Z"
+}
